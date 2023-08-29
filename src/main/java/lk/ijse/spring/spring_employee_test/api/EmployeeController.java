@@ -1,6 +1,6 @@
 package lk.ijse.spring.spring_employee_test.api;
 
-import lk.ijse.spring.spring_employee_test.dto.Employee;
+import lk.ijse.spring.spring_employee_test.dto.EmployeeDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,8 +9,8 @@ import java.util.List;
 @RequestMapping("/api/vi/employee")
 public class EmployeeController {
     @PostMapping
-    void employee(@RequestBody Employee employee){
-        System.out.println(employee);
+    void employee(@RequestBody EmployeeDTO employeeDTO){
+        System.out.println(employeeDTO);
     }
 
     @DeleteMapping
@@ -19,13 +19,13 @@ public class EmployeeController {
     }
 
     @PutMapping
-    void updateEmployee(@PathVariable String id, @RequestBody Employee employee){
+    void updateEmployee(@PathVariable String id, @RequestBody EmployeeDTO employeeDTO){
         System.out.println(id);
-        System.out.println(employee);
+        System.out.println(employeeDTO);
     }
 
     @GetMapping
-    List<Employee> getAllEmployees(){
+    List<EmployeeDTO> getAllEmployees(){
         return null;
     }
 }
