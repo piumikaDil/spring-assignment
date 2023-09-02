@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class EmployeeDTO {
+public class EmployeeDTO implements Serializable {
     private String empId;
     private  String name;
     private String email;

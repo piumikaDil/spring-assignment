@@ -15,4 +15,20 @@ public class EmployeeService {
         transaction.commit();
         return true;
     }
+
+    public static boolean deleteEmployee(String id){
+        if (id!=null){
+            Session session = FactoryConfig.getFactoryConfiguration().getSession();
+            Transaction transaction = session.getTransaction();
+
+            transaction.begin();
+            Employee emp = session.load(Employee.class, id);
+            session.delete(emp);
+            transaction.commit();
+            return true;
+        }
+        return false;
+
+    }
+
 }
